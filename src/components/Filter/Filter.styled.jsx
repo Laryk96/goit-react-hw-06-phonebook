@@ -8,13 +8,24 @@ const Label = styled.label`
   margin-bottom: 35px;
 
   & span {
-    margin-bottom: 5px;
+    font-weight: 500;
+    margin-bottom: 15px;
   }
 `;
 const Input = styled.input`
-  width: 300px;
-  height: 30px;
-  padding-left: 10px;
+  height: 35px;
+  width: 400px;
+  padding-left: 15px;
+
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  outline: yellow;
+
+  &:focus,
+  &:hover {
+    border: 2px solid #212121;
+  }
 `;
 
 export { Label, Input };

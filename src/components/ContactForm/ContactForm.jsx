@@ -1,16 +1,19 @@
 import { Formik, ErrorMessage } from 'formik';
 import * as yup from 'yup';
-import { v4 as uuidv4 } from 'uuid';
-import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { Label, Input, Button, Form } from './ContactForm.styled';
+import { addContact, getContacts } from 'redux/contactsSlice';
+import isNewName from 'services/checkContactName';
 
-const ContactForm = ({ onSubmit }) => {
+const ContactForm = () => {
+  const dispatch = useDispatch();
+  const contacts = useSelector(getContacts);
   const onSubmitForm = (values, { resetForm }) => {
-    const contacts = { id: uuidv4(), ...values };
-
-    onSubmit(contacts);
-    resetForm();
+    if (isNewName(contacts, values.name)) {
+      dispatch(addContact(values));
+      resetForm();
+    }
   };
 
   const initialValues = {
@@ -64,10 +67,6 @@ const ContactForm = ({ onSubmit }) => {
       </Form>
     </Formik>
   );
-};
-
-ContactForm.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
 };
 
 export default ContactForm;
