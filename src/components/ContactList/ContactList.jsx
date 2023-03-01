@@ -9,9 +9,9 @@ import { ContactsList, LabelItem } from './ContactList.styled';
 const ContactList = () => {
   const contacts = useSelector(getContacts);
   const toFilter = useSelector(getFilter);
-  console.log(contacts);
   const filteredContacts = contactsFiltration(contacts, toFilter);
-
+  console.log(contacts);
+  // console.log(filteredContacts);
   return (
     <ContactsList>
       {contacts[0] && (
