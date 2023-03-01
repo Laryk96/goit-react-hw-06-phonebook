@@ -10,8 +10,8 @@ const ContactList = () => {
   const contacts = useSelector(getContacts);
   const toFilter = useSelector(getFilter);
   const filteredContacts = contactsFiltration(contacts, toFilter);
-  console.log(contacts);
-  // console.log(filteredContacts);
+  console.log(filteredContacts);
+
   return (
     <ContactsList>
       {contacts[0] && (

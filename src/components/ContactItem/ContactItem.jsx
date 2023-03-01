@@ -7,7 +7,7 @@ const Contact = ({ id, name, number }) => {
   return (
     <ContactItem>
       <ContactName>
-        <span> {name}:</span> <span>{number}</span>
+        <span> {name}</span> <span>{number}</span>
       </ContactName>
       <Button
         type="button"
