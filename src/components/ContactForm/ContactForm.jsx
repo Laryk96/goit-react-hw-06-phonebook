@@ -3,8 +3,9 @@ import * as yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Label, Input, Button, Form } from './ContactForm.styled';
-import { addContact, getContacts } from 'redux/contactsSlice';
+import { addContact } from 'redux/contactsSlice';
 import isNewName from 'services/checkContactName';
+import { getContacts } from 'redux/selectors';
 
 const ContactForm = () => {
   const dispatch = useDispatch();

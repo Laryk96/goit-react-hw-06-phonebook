@@ -21,5 +21,3 @@ export const contactsSlice = createSlice({
 });
 
 export const { addContact, delateContact } = contactsSlice.actions;
-
-export const getContacts = state => state.contacts;
